@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './components/Header';
 
-
 function App() {
   const name = "Gabriel"
   const navs = ["Home", "Contacts", "About"]
