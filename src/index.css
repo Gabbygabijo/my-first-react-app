@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  display: flex;
+  padding: 2rem;
+}
+.header > h1 {
+  margin: 1.3rem;
+}
+
+.App {
+  text-align: center;
+  color: #f0ffff;
+  background: url(../src/images/AYSF1498.JPG);
+}
+.btn{
+  margin-top: 20px;
+  height: 40px;
+  float: right;
+  background-color: green;
+  color: black;
+  border-radius: 7px;
+}

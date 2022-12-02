@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import Header from './components/Header';
 
 function App() {
@@ -6,12 +6,12 @@ function App() {
   const navs = ["Home", "Contacts", "About"]
   return (
     <div className="App">
-      <Header/>
+      <Header title='Free bits'/>
       <h2>Welcome {name}</h2>
       <div>
-        <ul>
-          {navs.map((item, j)=><li key={j}>{item}</li> )}
-        </ul>
+        {/* <ul>
+          {navs.map((item, j)=><li key={j}><a href='#'>{item}</a></li> )}
+        </ul> */}
       </div>
         
     </div>
