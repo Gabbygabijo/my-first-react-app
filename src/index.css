@@ -23,13 +23,28 @@ code {
 .App {
   text-align: center;
   color: #f0ffff;
-  background: url(../src/images/AYSF1498.JPG);
+  background: #bda7d3;
+  height: 90vw;
 }
 .btn{
   margin-top: 20px;
   height: 40px;
   float: right;
-  background-color: green;
-  color: black;
-  border-radius: 7px;
+  background-color: #5c615c;
+  color: #e89b9b;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+ul li{
+  list-style-type: none;
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+ul li a{
+  color:#cccccc;
+  text-decoration: none;
 }
