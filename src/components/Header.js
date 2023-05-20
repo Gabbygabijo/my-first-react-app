@@ -1,10 +1,8 @@
-import Button from './Button';
 
 const Header = ({title}) => {
   return (
     <header className='header'>
-        <h1>{title}</h1>
-        <Button />
+        <h1>This is my new app</h1>
     </header>
   )
 }
