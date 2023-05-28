@@ -1,5 +1,5 @@
+import React from 'react'
 import { useState } from 'react'
-import Button from './Button'
 
 
 const Section = () => {
@@ -7,29 +7,35 @@ const Section = () => {
     const [tag, setTag] = useState([])
     
 
+
     const handleClick = (e) => {
       e.preventDefault()
-      const id = Math.floor(Math.random() * 100 + 1)
+      const id = Math.floor(Math.random() * 1000 + 1)
       const newTag = { id, input }
       setTag([ ...tag, newTag ])
       setInput('')
+      return
     }
 
-    const handleChange = (e) => setInput(e.target.value)
+    const onAct = (k)=>{
+      return ()=>{
+        setTag(tag.filter((tag) => tag.id !== k))
+      } 
+    }
 
   return (
     <>
     <header className='header'>
         <h1>Name Tag Generator</h1>
-        <form>
-          <input type="text" value={input} onChange={handleChange} placeholder='Add a tag name here' className='input' />
-          <Button onClick={handleClick} name={'Create Name Tag'} />
+        <form method="post" onSubmit={handleClick}>
+          <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder='Add a tag name here' className='input' />
+          <button type='submit' className='btn'>Create Name Tag</button>
         </form>
         
     </header>
     <section className='container'>
-        {tag.map((input, i) => (
-          <div key={i}>
+        {tag.map((input) => (
+          <div key={input.id} onDoubleClick={onAct(input.id)}>
             <div className="head"><span> </span><h1 className="h1">HELLO</h1> <p className="pp">My name is</p></div> <p className="p">{input.input} </p> <div className="tail"></div>
           </div>
         ))}
