@@ -10,6 +10,10 @@ const Section = () => {
 
     const handleClick = (e) => {
       e.preventDefault()
+      if (!input) {
+        alert("Please input a name");
+        return
+      }
       const id = Math.floor(Math.random() * 1000 + 1)
       const newTag = { id, input }
       setTag([ ...tag, newTag ])
@@ -18,7 +22,7 @@ const Section = () => {
     }
 
     const onAct = (k)=>{
-      return ()=>{
+      return () => {
         setTag(tag.filter((tag) => tag.id !== k))
       } 
     }
@@ -34,8 +38,8 @@ const Section = () => {
         
     </header>
     <section className='container'>
-        {tag.map((input) => (
-          <div key={input.id} onDoubleClick={onAct(input.id)}>
+        {tag.map((input, i) => (
+          <div key={i} onDoubleClick={onAct(input.id)}>
             <div className="head"><span> </span><h1 className="h1">HELLO</h1> <p className="pp">My name is</p></div> <p className="p">{input.input} </p> <div className="tail"></div>
           </div>
         ))}
